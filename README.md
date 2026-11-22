@@ -1,60 +1,40 @@
-# desafio_teste_campo_minado
+# Campo Minado — desafio de testes
 
-Projeto de testes automatizados de **Campo Minado**.
+## Desafio
 
-## 1. Colaborador(es)
+O desafio é elaborar testes automatizados para Campo Minado. A implementação completa do jogo não é obrigatória na atividade; este repositório inclui uma implementação de referência para os testes.
 
-- Colaborador 1: Heloísa Sayuri Silva Saito
+A especificação registrada no README auditado informa um tabuleiro de 18 linhas por 14 colunas, com 40 bombas. O enunciado auditado não detalha todas as regras do jogo. A implementação recebe explicitamente as posições das bombas, valida suas coordenadas, calcula bombas adjacentes, permite revelar e marcar casas, registra derrota ao revelar uma bomba e vitória ao revelar todas as casas seguras. Regras adicionais não devem ser atribuídas ao enunciado sem consultar sua versão completa.
 
-- Colaborador 2: Maria Eduarda de Castro Lachimia
+## Colaboradores
 
-## 2. Especificação do desafio
+- Heloísa Sayuri Silva Saito
 
-O desafio consiste em criar casos de teste em JavaScript para tabuleiro 18 x 14 com 40 bombas.
+- Maria Eduarda de Castro Lachimia
 
-## 3. Estrutura do projeto
+## Arquivos
 
-```
-.
-├── package.json
-├── README.md
-├── src/
-│   └── CampoMinado.js
-└── tests/
-    └── CampoMinado.test.js
-```
+- `CampoMinado.js`: implementação da classe.
 
-- `src/CampoMinado.js`: implementação da classe testada.
+- `CampoMinado.test.js`: testes com `node:test` e `node:assert/strict`.
 
-- `tests/CampoMinado.test.js`: casos de teste automatizados.
+## Casos de teste
 
-## 4. Funcionamento dos casos de teste
+| Caso | O que verifica |
+| --- | --- |
+| Cria tabuleiro 18 por 14 com quarenta bombas | As dimensões, a quantidade de posições distintas e o estado inicial são os esperados. |
+| Rejeita dimensões ou quantidade de bombas inválidas | Dimensão diferente e lista com quantidade errada de bombas são rejeitadas. |
+| Rejeita posições de bomba duplicadas, fracionárias ou fora do tabuleiro | Coordenadas repetidas, não inteiras ou fora do intervalo são rejeitadas. |
+| Conta bombas adjacentes e revela uma casa segura | A contagem da vizinhança é correta, a casa segura é revelada e a partida continua. |
+| Revelar uma bomba encerra a partida com derrota | A ação retorna `bomba`, altera o status para `perdeu` e bloqueia ações posteriores. |
+| Marcação alterna e bloqueia a revelação enquanto ativa | A marca pode ser colocada e removida; uma casa marcada não pode ser revelada. |
+| Rejeita posições inválidas e revelação repetida | Coordenadas fora do tabuleiro, fracionárias e casas já reveladas são rejeitadas. |
+| Vence quando todas as casas sem bomba são reveladas | A revelação de todas as casas seguras altera o status para `venceu`. |
 
-Os testes usam Jest e seguem três etapas: preparar o jogo, executar uma ação e verificar o resultado esperado com `expect`.
+## Como executar
 
-Casos testados: criação do tabuleiro, revelação de casa segura, identificação de bomba, marcação, posição inválida e quantidade de bombas.
-
-## 5. Instalação e execução
-
-```bash
-npm install
-npm test
-```
-
-Para cobertura:
+Requer Node.js 18 ou superior. Não há dependências externas. Na pasta deste projeto, execute:
 
 ```bash
-npm run test:coverage
+node --test
 ```
-
-## 6. Observações do enunciado
-
-- A realização dos desafios é opcional.
-
-- O trabalho pode ser feito em dupla.
-
-- As contribuições dos integrantes devem aparecer no repositório.
-
-- Serão considerados no máximo 5 desafios entregues.
-
-- O repositório segue o padrão de nomenclatura exigido: `desafio_teste_campo_minado`.
