@@ -8,9 +8,8 @@ A especificação registrada no README auditado informa um tabuleiro de 18 linha
 
 ## Colaboradores
 
-- Heloísa Sayuri Silva Saito
-
-- Maria Eduarda de Castro Lachimia
+- Heloísa Sayuri Silva Saito | RA: 24062631-2
+- Maria Eduarda de Castro Lachimia | RA: 24055202-2
 
 ## Arquivos
 
