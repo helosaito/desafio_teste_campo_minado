@@ -7,7 +7,7 @@ class CampoMinado {
             throw new Error('O tabuleiro deve possuir 40 posições de bomba.');
         }
 
-        this.linhas = linhas;
+        this.linhas = linhas; 
         this.colunas = colunas;
         const posicoes = bombas.map((bomba) => {
             if (
