@@ -1,4 +1,4 @@
-# Campo Minado — desafio de testes
+# Campo Minado — Desafio de Testes
 
 ## Desafio
 
