@@ -9,7 +9,7 @@ function criarBombas() {
             bombas.push({ linha, coluna });
         }
     }
-    return bombas;
+    return bombas; 
 }
 
 function criarJogo(bombas = criarBombas()) {
