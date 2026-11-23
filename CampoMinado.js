@@ -102,17 +102,4 @@ class CampoMinado {
         return this.bombasAdjacentes(linha, coluna);
     }
 
-    marcar(linha, coluna) {
-        this.exigirPartidaEmAndamento();
-        this.exigirPosicaoValida(linha, coluna);
-        const posicao = this.chave(linha, coluna);
-        if (this.marcadas.has(posicao)) {
-            this.marcadas.delete(posicao);
-            return false;
-        }
-        this.marcadas.add(posicao);
-        return true;
-    }
-}
-
-module.exports = { CampoMinado };
+ 
