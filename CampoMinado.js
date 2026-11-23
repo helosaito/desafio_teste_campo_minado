@@ -102,7 +102,6 @@ class CampoMinado {
         return this.bombasAdjacentes(linha, coluna);
     }
 
- 
    marcar(linha, coluna) {
         this.exigirPartidaEmAndamento();
         this.exigirPosicaoValida(linha, coluna);
